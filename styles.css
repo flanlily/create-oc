@@ -35,13 +35,14 @@ h2 {
 .day-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* 中央揃え */
   width: 100%;
 }
 
 .day {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* 変更: 各曜日のチェックボックスを中央揃え */
+  flex-direction: column; /* 変更: 縦方向に配置 */
   width: 100%;
   padding: 10px;
   background-color: #f2f2f2;
