@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タスク通知システム</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>タスク通知設定</h1>
+
+  <!-- 曜日ごとの朝活と締め活選択 -->
+  <div>
+    <h2>曜日別タスク設定</h2>
+    <form id="dayForm">
+      <div id="day-options">
+        <div v-for="day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']">
+          <label>{{ day }} 朝活 <input type="checkbox" name="{{ day.toLowerCase() }}Morning"></label>
+          <label>{{ day }} 締め活 <input type="checkbox" name="{{ day.toLowerCase() }}Evening"></label>
+          <div id="{{ day }}TaskList"></div>
+        </div>
+      </div>
+      <button type="button" id="saveButton">設定を保存</button>
+    </form>
+  </div>
+
+  <!-- 通知許可のリクエスト -->
+  <script src="script.js"></script>
+</body>
+</html>
